@@ -52,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("==>", "Sign in clicked.");
                 Log.d("==>", "Username:"+username.getText());
                 Intent intent = new Intent(MainActivity.this,ProfileActivity.class);
+                // getText() returns an editable ... in order to use as string we need to use toString()
+                intent.putExtra("username", username.getText().toString());
                 startActivity(intent);
             }
         });
