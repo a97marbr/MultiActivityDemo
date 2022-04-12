@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">MultiActivityDemo</string>
     <string name="username_label">What is your name?</string>
+    <string name="greetings_msg">Welcome to the second activity</string>
+    <string name="username">Username</string>
+    <string name="sign_out">Sign out</string>
 </resources>
