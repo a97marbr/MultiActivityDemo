@@ -13,6 +13,7 @@ public class ProfileActivity extends AppCompatActivity {
     private Button signout;
     private String username;
     private TextView usernameView;
+    private User user;
 
     @Override
     protected void onPostResume() {
@@ -47,10 +48,13 @@ public class ProfileActivity extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         if(extras != null){
             username = extras.getString("username");
+            user = extras.getParcelable("user");
         }else{
             username = "No name given!";
+            user = new User("John", "Doe", 99);
         }
         Log.d("==>", "Username sent through Intent:"+username);
+        Log.d("==>", "User sent through Intent:"+user);
 
         usernameView = findViewById(R.id.username_text);
         usernameView.setText(username);

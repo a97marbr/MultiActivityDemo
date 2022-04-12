@@ -54,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this,ProfileActivity.class);
                 // getText() returns an editable ... in order to use as string we need to use toString()
                 intent.putExtra("username", username.getText().toString());
+                User u = new User(username.getText().toString(),"Gregersson", 45);
+                intent.putExtra("user",u);
                 startActivity(intent);
             }
         });
