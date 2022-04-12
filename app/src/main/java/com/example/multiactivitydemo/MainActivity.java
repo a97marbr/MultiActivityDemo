@@ -2,13 +2,16 @@ package com.example.multiactivitydemo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
     private Button signin;
+    private EditText username;
 
     @Override
     protected void onPostResume() {
@@ -40,11 +43,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Log.d("==>", "MainActivity created.");
 
+        username = findViewById(R.id.username);
+
         signin = findViewById(R.id.signin);
         signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("==>", "Submit username clicked.");
+                Log.d("==>", "Sign in clicked.");
+                Log.d("==>", "Username:"+username.getText());
+                Intent intent = new Intent(MainActivity.this,ProfileActivity.class);
+                startActivity(intent);
             }
         });
     }
