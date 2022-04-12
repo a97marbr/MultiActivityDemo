@@ -7,10 +7,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class ProfileActivity extends AppCompatActivity {
     private Button signout;
     private String username;
+    private TextView usernameView;
 
     @Override
     protected void onPostResume() {
@@ -49,6 +51,10 @@ public class ProfileActivity extends AppCompatActivity {
             username = "No name given!";
         }
         Log.d("==>", "Username sent through Intent:"+username);
+
+        usernameView = findViewById(R.id.username_text);
+        usernameView.setText(username);
+
 
         signout = findViewById(R.id.sign_out);
         signout.setOnClickListener(new View.OnClickListener() {
